@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service Code {
+  rpc GetAns(CalRequest) returns (CalResponse){};
+}
+
+message CalRequest {
+  string number = 1;
+}
+
+message CalResponse {
+  string id = 1;
+  repeated message data = 2;
+}
+
+message message{
+  uint64 time = 1;
+  uint32 value = 2;
+}
